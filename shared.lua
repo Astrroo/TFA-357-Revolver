@@ -64,7 +64,7 @@ SWEP.Primary.DamageTypeHandled = true -- true will handle damagetype in base
 SWEP.Primary.DamageType         = DMG_BULLET -- See DMG enum.  This might be DMG_SHOCK, DMG_BURN, DMG_BULLET, etc.  Leave nil to autodetect.  DMG_AIRBOAT opens doors.
 
 ----------------- TFA Base Basic sound handling
-SWEP.Primary.Sound              = Sound("") -- This is the sound of the weapon, when you shoot.
+SWEP.Primary.Sound              = Sound("weapons/357/357_fire2.wav") -- This is the sound of the weapon, when you shoot.
 SWEP.Primary.SilencedSound      = nil -- This is the sound of the weapon, when silenced.
 -- AKA IronInSound
 SWEP.Secondary.IronSightsInSound = nil -- Sound to play when iron sighting in? nil for default
@@ -167,7 +167,7 @@ SWEP.FireSoundAffectedByClipSize  = true -- Whenever adjuct pitch (and proably o
 ----------------- Ammo Related
 SWEP.Primary.ClipSize           = 6 -- This is the size of a clip
 
-SWEP.Primary.DefaultClip        = 0 -- This is the number of bullets the gun gives you, counting a clip as defined directly above.
+SWEP.Primary.DefaultClip        = 12 -- This is the number of bullets the gun gives you, counting a clip as defined directly above.
 SWEP.Primary.Ammo               = "357" -- What kind of ammo.  Options, besides custom, include pistol, 357, smg1, ar2, buckshot, slam, SniperPenetratedRound, and AirboatGun.
 -- Pistol, buckshot, and slam like to ricochet. Use AirboatGun for a light metal peircing shotgun pellets
 SWEP.Primary.AmmoConsumption    = 1 -- Ammo consumed per shot
@@ -176,13 +176,13 @@ SWEP.Primary.AmmoConsumption    = 1 -- Ammo consumed per shot
 SWEP.Primary.DisableChambering  = false -- Disable round-in-the-chamber
 
 -- Recoil Related
-SWEP.Primary.KickUp             = 0 -- This is the maximum upwards recoil (rise)
+SWEP.Primary.KickUp             = 0.7 -- This is the maximum upwards recoil (rise)
 SWEP.Primary.KickDown           = 0 -- This is the maximum downwards recoil (skeet)
 SWEP.Primary.KickHorizontal     = 0 -- This is the maximum sideways recoil (no real term)
 SWEP.Primary.StaticRecoilFactor = 0.5 -- Amount of recoil to directly apply to EyeAngles.  Enter what fraction or percentage (in decimal form) you want.  This is also affected by a convar that defaults to 0.5.
 
 -- Firing Cone Related
-SWEP.Primary.Spread             = .01 -- This is hip-fire acuracy.  Less is more (1 is horribly awful, .0001 is close to perfect)
+SWEP.Primary.Spread             = .05 -- This is hip-fire acuracy.  Less is more (1 is horribly awful, .0001 is close to perfect)
 SWEP.Primary.IronAccuracy       = .005 -- Ironsight accuracy, should be the same for shotguns
 SWEP.Primary.DisplaySpread      = nil -- Defaults to true. Display spread on customization screen?
 SWEP.Primary.DisplayIronSpread  = nil -- Defaults to Primary.DisplaySpread. Display spread on customization screen for iron sights? This is always false if Secondary.IronSightsEnabled is false
@@ -383,10 +383,10 @@ SWEP.RegularMoveSpeedMultiplier         = nil -- Defaults to 1
 SWEP.AimingDownSightsSpeedMultiplier    = nil -- Defaults to 0.8
 
 ----------------- ViewModel related
-SWEP.ViewModel          = "models/your/path/here.mdl" -- Viewmodel path
+SWEP.ViewModel          = "models\weapons\c_357.mdl" -- Viewmodel path
 SWEP.ViewModelFOV       = 65        -- This controls how big the viewmodel looks.  Less is more.
 SWEP.ViewModelFlip      = false     -- Set this to true for CSS models, or false for everything else (with a righthanded viewmodel.)
-SWEP.UseHands           = false -- Use gmod c_arms system.
+SWEP.UseHands           = true -- Use gmod c_arms system.
 
 -- The viewmodel positional offset, constantly.
 -- Subtract this from any other modifications to viewmodel position.
@@ -488,7 +488,7 @@ SWEP.Secondary.OwnerFOV             = 70
 SWEP.Secondary.ViewModelFOV         = nil -- Defaults to 65. Target viewmodel FOV when aiming down the sights.
 
 ----------------- Worldmodel related
-SWEP.WorldModel                 = "models/your/wmodel/path/here.mdl" -- Weapon world model path
+SWEP.WorldModel                 = "models/weapons\w_357.mdl" -- Weapon world model path
 -- AKA Bodygroups_W
 SWEP.WorldModelBodygroups       = nil -- {
 -- [0] = 1,
@@ -496,7 +496,7 @@ SWEP.WorldModelBodygroups       = nil -- {
 -- [2] = etc.
 -- }
 
-SWEP.HoldType = "" -- This is how others view you carrying the weapon. Options include:
+SWEP.HoldType = "pistol" -- This is how others view you carrying the weapon. Options include:
 -- normal melee melee2 fist knife smg ar2 pistol rpg physgun grenade shotgun crossbow slam passive
 -- You're mostly going to use ar2, smg, shotgun or pistol. rpg and crossbow make for good sniper rifles
 
@@ -584,7 +584,7 @@ SWEP.LoopedReloadInsertTime = 0.35
 ----------------- Animation stuff / procedural ones (Lua animated)
 
 -- ViewModel custom blowback
-SWEP.BlowbackEnabled        = false -- Enable Blowback?
+SWEP.BlowbackEnabled        = true -- Enable Blowback?
 SWEP.BlowbackVector         = Vector(0, -1, 0) -- Vector to move bone <or root> relative to bone <or view> orientation.
 SWEP.BlowbackAngle          = nil -- Angle(0, 0, 0)
 SWEP.BlowbackCurrentRoot    = 0 -- Amount of blowback currently, for root
