@@ -14,9 +14,9 @@ SWEP.TFADataVersion             = 1
 
 ----------------- Basic Garry's Mod SWEP structure stats / TFA Base properties
 SWEP.Base                       = "tfa_gun_base"
-SWEP.Category                   = "TFA Template" -- The category.
+SWEP.Category                   = "TFA Landis" -- The category.
 -- Please, just choose something generic or something I've already done if you plan on only doing like one (or two or three) swep(s).
-SWEP.Manufacturer               = nil -- Gun Manufactrer (e.g. Hoeckler and Koch)
+SWEP.Manufacturer               = "Smith & Wesson" -- Gun Manufactrer (e.g. Hoeckler and Koch)
 SWEP.Author                     = "" -- Author Tooltip
 SWEP.Contact                    = "" -- Contact Info Tooltip
 SWEP.Purpose                    = "" -- Purpose Tooltip
@@ -27,21 +27,21 @@ SWEP.DrawCrosshair              = true      -- Draw the crosshair?
 
 -- AKA DrawCrosshairIS
 SWEP.DrawCrosshairIronSights    = false -- Draw the crosshair in ironsights?
-SWEP.PrintName                  = "TFA Base Template"       -- Weapon name (Shown on HUD)
-SWEP.Slot                       = 2             -- Slot in the weapon selection menu.  Subtract 1, as this starts at 0.
+SWEP.PrintName                  = ".357 Revolver"       -- Weapon name (Shown on HUD)
+SWEP.Slot                       = 1             -- Slot in the weapon selection menu.  Subtract 1, as this starts at 0.
 SWEP.SlotPos                    = 73            -- Position in the slot
 SWEP.AutoSwitchTo               = true      -- Auto switch to if we pick it up
 SWEP.AutoSwitchFrom             = true      -- Auto switch from if you pick up a better weapon
 SWEP.Weight                     = 30            -- This controls how "good" the weapon is for autopickup.
 
 ----------------- The Most basic weapon stats
-SWEP.Primary.RPM                = 600 -- This is in Rounds Per Minute / RPM
+SWEP.Primary.RPM                = 85 -- This is in Rounds Per Minute / RPM
 SWEP.Primary.NumShots           = 1 -- The number of shots the weapon fires
 SWEP.Primary.HullSize           = 0 -- Big bullets, increase this value.  They increase the hull size of the hitscan bullet.
-SWEP.Primary.Automatic          = true -- Automatic/Semi Auto
+SWEP.Primary.Automatic          = false -- Automatic/Semi Auto
 
 -- If your gun is bullet based
-SWEP.Primary.Damage             = 0.01 -- Damage, in standard damage points.
+SWEP.Primary.Damage             = 45 -- Damage, in standard damage points.
 SWEP.Primary.Force              = nil -- Force value, leave nil to autocalc
 -- elseif Your gun is projectile based
 -- If your gun is projectile based, ignore Primary.Damage and Primary.Force
@@ -61,7 +61,7 @@ SWEP.Primary.RPM_Semi           = nil -- RPM for semi-automatic or burst fire.  
 SWEP.Primary.RPM_Burst          = nil -- RPM for burst fire, overrides semi.  This is in Rounds Per Minute / RPM
 
 SWEP.Primary.DamageTypeHandled = true -- true will handle damagetype in base
-SWEP.Primary.DamageType         = nil -- See DMG enum.  This might be DMG_SHOCK, DMG_BURN, DMG_BULLET, etc.  Leave nil to autodetect.  DMG_AIRBOAT opens doors.
+SWEP.Primary.DamageType         = DMG_BULLET -- See DMG enum.  This might be DMG_SHOCK, DMG_BURN, DMG_BULLET, etc.  Leave nil to autodetect.  DMG_AIRBOAT opens doors.
 
 ----------------- TFA Base Basic sound handling
 SWEP.Primary.Sound              = Sound("") -- This is the sound of the weapon, when you shoot.
@@ -89,14 +89,14 @@ SWEP.Primary.LoopSoundTailSilenced_World = nil -- Loop end/tail sound, silenced
 
 ----------------- Jamming mechanics
 SWEP.CanJam                     = true -- whenever weapon cam jam
-SWEP.JamChance                  = 0.04 -- the (maximal) chance the weapon will jam. Newly spawned weapon will never jam on first shot for example.
+SWEP.JamChance                  = 0.17 -- the (maximal) chance the weapon will jam. Newly spawned weapon will never jam on first shot for example.
 -- Default value is 0.04 (4%)
 -- Maxmial value is 1, means weapon will always jam when factor become 100
 -- Also remember that there is a minimal factor before weapon can jam
 -- This number is not treated "as-is" but as basic value that needs to be concluded as chance
 -- You don't really need to cry over it and trying to balance it, TFA Base will do the job for you
 -- (TFA Base will calculate the best value between 0 and JamChance based on current JamFactor of the weapon)
-SWEP.JamFactor                  = 0.06 -- How to increase jam factor after each shot.
+SWEP.JamFactor                  = 0.50 -- How to increase jam factor after each shot.
 -- When factor reach 100 it will mean that on each shot there will be SWEP.Primary.JamChance chance to jam
 -- When factor reach 50 it will mean that on each shot there will be SWEP.Primary.JamChance / 2 chance to jam
 -- and so on
@@ -165,10 +165,10 @@ SWEP.FireSoundAffectedByClipSize  = true -- Whenever adjuct pitch (and proably o
 -- Weapon is a shotgun
 
 ----------------- Ammo Related
-SWEP.Primary.ClipSize           = 0 -- This is the size of a clip
+SWEP.Primary.ClipSize           = 6 -- This is the size of a clip
 
 SWEP.Primary.DefaultClip        = 0 -- This is the number of bullets the gun gives you, counting a clip as defined directly above.
-SWEP.Primary.Ammo               = "none" -- What kind of ammo.  Options, besides custom, include pistol, 357, smg1, ar2, buckshot, slam, SniperPenetratedRound, and AirboatGun.
+SWEP.Primary.Ammo               = "357" -- What kind of ammo.  Options, besides custom, include pistol, 357, smg1, ar2, buckshot, slam, SniperPenetratedRound, and AirboatGun.
 -- Pistol, buckshot, and slam like to ricochet. Use AirboatGun for a light metal peircing shotgun pellets
 SWEP.Primary.AmmoConsumption    = 1 -- Ammo consumed per shot
 
