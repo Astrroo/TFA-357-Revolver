@@ -16,11 +16,11 @@ SWEP.TFADataVersion             = 1
 SWEP.Base                       = "tfa_gun_base"
 SWEP.Category                   = "TFA Landis" -- The category.
 -- Please, just choose something generic or something I've already done if you plan on only doing like one (or two or three) swep(s).
-SWEP.Manufacturer               = "Smith & Wesson" -- Gun Manufactrer (e.g. Hoeckler and Koch)
+SWEP.Manufacturer               = "Colt's Manufacturing Company of Hartford" -- Gun Manufactrer (e.g. Hoeckler and Koch)
 SWEP.Author                     = "" -- Author Tooltip
 SWEP.Contact                    = "" -- Contact Info Tooltip
 SWEP.Purpose                    = "" -- Purpose Tooltip
-SWEP.Instructions               = "" -- Instructions Tooltip
+SWEP.Instructions               = "Initially being sold and produced in 1955, it continued to be readily used and manufactured until 2000 where production ceased. It commonly found itself in the hands of Law Enforcement Officers, however eventually fell out of favor of semi-automatic handguns." -- Instructions Tooltip
 SWEP.Spawnable                  = false -- Can you, as a normal user, spawn this?
 SWEP.AdminSpawnable             = false -- Can an adminstrator spawn this?  Does not tie into your admin mod necessarily, unless its coded to allow for GMod's default ranks somewhere in its code.  Evolve and ULX should work, but try to use weapon restriction rather than these.
 SWEP.DrawCrosshair              = true      -- Draw the crosshair?
