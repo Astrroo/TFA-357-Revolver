@@ -27,7 +27,7 @@ SWEP.DrawCrosshair              = true      -- Draw the crosshair?
 
 -- AKA DrawCrosshairIS
 SWEP.DrawCrosshairIronSights    = false -- Draw the crosshair in ironsights?
-SWEP.PrintName                  = ".357 Revolver"       -- Weapon name (Shown on HUD)
+SWEP.PrintName                  = "Colt Python"       -- Weapon name (Shown on HUD)
 SWEP.Slot                       = 1             -- Slot in the weapon selection menu.  Subtract 1, as this starts at 0.
 SWEP.SlotPos                    = 73            -- Position in the slot
 SWEP.AutoSwitchTo               = true      -- Auto switch to if we pick it up
