@@ -383,7 +383,7 @@ SWEP.RegularMoveSpeedMultiplier         = nil -- Defaults to 1
 SWEP.AimingDownSightsSpeedMultiplier    = nil -- Defaults to 0.8
 
 ----------------- ViewModel related
-SWEP.ViewModel          = "models\weapons\c_357.mdl" -- Viewmodel path
+SWEP.ViewModel          = "models/weapons/c_357.mdl" -- Viewmodel path
 SWEP.ViewModelFOV       = 65        -- This controls how big the viewmodel looks.  Less is more.
 SWEP.ViewModelFlip      = false     -- Set this to true for CSS models, or false for everything else (with a righthanded viewmodel.)
 SWEP.UseHands           = true -- Use gmod c_arms system.
@@ -488,7 +488,7 @@ SWEP.Secondary.OwnerFOV             = 70
 SWEP.Secondary.ViewModelFOV         = nil -- Defaults to 65. Target viewmodel FOV when aiming down the sights.
 
 ----------------- Worldmodel related
-SWEP.WorldModel                 = "models/weapons\w_357.mdl" -- Weapon world model path
+SWEP.WorldModel                 = "models/weapons/w_357.mdl" -- Weapon world model path
 -- AKA Bodygroups_W
 SWEP.WorldModelBodygroups       = nil -- {
 -- [0] = 1,
