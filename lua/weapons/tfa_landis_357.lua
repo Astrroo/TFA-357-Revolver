@@ -14,7 +14,7 @@ SWEP.TFADataVersion             = 1
 
 ----------------- Basic Garry's Mod SWEP structure stats / TFA Base properties
 SWEP.Base                       = "tfa_gun_base"
-SWEP.Category                   = "TFA Landis" -- The category.
+SWEP.Category                   = "TFA MMOD" -- The category.
 -- Please, just choose something generic or something I've already done if you plan on only doing like one (or two or three) swep(s).
 SWEP.Manufacturer               = "Colt's Manufacturing Company of Hartford" -- Gun Manufactrer (e.g. Hoeckler and Koch)
 SWEP.Author                     = "" -- Author Tooltip
@@ -64,7 +64,7 @@ SWEP.Primary.DamageTypeHandled = true -- true will handle damagetype in base
 SWEP.Primary.DamageType         = DMG_BULLET -- See DMG enum.  This might be DMG_SHOCK, DMG_BURN, DMG_BULLET, etc.  Leave nil to autodetect.  DMG_AIRBOAT opens doors.
 
 ----------------- TFA Base Basic sound handling
-SWEP.Primary.Sound              = Sound("weapons/357/357_fire2.wav") -- This is the sound of the weapon, when you shoot.
+SWEP.Primary.Sound              = Sound("weapons/357/357_fire3.wav") -- This is the sound of the weapon, when you shoot.
 SWEP.Primary.SilencedSound      = nil -- This is the sound of the weapon, when silenced.
 -- AKA IronInSound
 SWEP.Secondary.IronSightsInSound = nil -- Sound to play when iron sighting in? nil for default
@@ -173,17 +173,17 @@ SWEP.Primary.Ammo               = "357" -- What kind of ammo.  Options, besides 
 SWEP.Primary.AmmoConsumption    = 1 -- Ammo consumed per shot
 
 -- AKA DisableChambering
-SWEP.Primary.DisableChambering  = false -- Disable round-in-the-chamber
+SWEP.Primary.DisableChambering  = true -- Disable round-in-the-chamber
 
 -- Recoil Related
-SWEP.Primary.KickUp             = 0.7 -- This is the maximum upwards recoil (rise)
+SWEP.Primary.KickUp             = 2 -- This is the maximum upwards recoil (rise)
 SWEP.Primary.KickDown           = 0 -- This is the maximum downwards recoil (skeet)
 SWEP.Primary.KickHorizontal     = 0 -- This is the maximum sideways recoil (no real term)
-SWEP.Primary.StaticRecoilFactor = 0.5 -- Amount of recoil to directly apply to EyeAngles.  Enter what fraction or percentage (in decimal form) you want.  This is also affected by a convar that defaults to 0.5.
+SWEP.Primary.StaticRecoilFactor = 1 -- Amount of recoil to directly apply to EyeAngles.  Enter what fraction or percentage (in decimal form) you want.  This is also affected by a convar that defaults to 0.5.
 
 -- Firing Cone Related
-SWEP.Primary.Spread             = .05 -- This is hip-fire acuracy.  Less is more (1 is horribly awful, .0001 is close to perfect)
-SWEP.Primary.IronAccuracy       = .005 -- Ironsight accuracy, should be the same for shotguns
+SWEP.Primary.Spread             = .015 -- This is hip-fire acuracy.  Less is more (1 is horribly awful, .0001 is close to perfect)
+SWEP.Primary.IronAccuracy       = .0005 -- Ironsight accuracy, should be the same for shotguns
 SWEP.Primary.DisplaySpread      = nil -- Defaults to true. Display spread on customization screen?
 SWEP.Primary.DisplayIronSpread  = nil -- Defaults to Primary.DisplaySpread. Display spread on customization screen for iron sights? This is always false if Secondary.IronSightsEnabled is false
 
@@ -399,9 +399,9 @@ SWEP.ViewModelAngle     = Vector(0, 0, 0)
 
 -- Position when sprinting
 -- AKA RunSightsPos (SWEP Construction Kit naming)
-SWEP.SprintViewModelPosition    = Vector(0, 0, 0) -- Change this, using SWEP Creation Kit preferably
+SWEP.SprintViewModelPosition    = Vector(4.623, -19.296, -11.056) -- Change this, using SWEP Creation Kit preferably
 -- AKA RunSightsAng (SWEP Construction Kit naming)
-SWEP.SprintViewModelAngle       = Vector(0, 0, 0) -- Change this, using SWEP Creation Kit preferably
+SWEP.SprintViewModelAngle       = Vector(70, 1.2, 0) -- Change this, using SWEP Creation Kit preferably
 
 -- Position when crouching
 -- Viewmodel offset when player is crouched
@@ -410,7 +410,7 @@ SWEP.CrouchViewModelPosition    = nil -- Defaults to nothing, use Vector(0, 0, 0
 -- AKA CrouchAng
 SWEP.CrouchViewModelAngle       = nil -- Defaults to nothing, use Vector(0, 0, 0) as starting point
 
-SWEP.IronSightsPosition         = Vector(0, 0, 0) -- Change this, using SWEP Creation Kit preferably
+SWEP.IronSightsPosition         = Vector(-3.171, -8, 1.205) -- Change this, using SWEP Creation Kit preferably
 SWEP.IronSightsAngle            = Vector(0, 0, 0) -- Change this, using SWEP Creation Kit preferably
 
 -- Inspection position
@@ -585,13 +585,13 @@ SWEP.LoopedReloadInsertTime = 0.35
 
 -- ViewModel custom blowback
 SWEP.BlowbackEnabled        = true -- Enable Blowback?
-SWEP.BlowbackVector         = Vector(0, -1, 0) -- Vector to move bone <or root> relative to bone <or view> orientation.
-SWEP.BlowbackAngle          = nil -- Angle(0, 0, 0)
+SWEP.BlowbackVector         = Vector(0, -2, -1) -- Vector to move bone <or root> relative to bone <or view> orientation.
+SWEP.BlowbackAngle          = Angle(7, -0.704, 1.5)-- Angle(0, 0, 0)
 SWEP.BlowbackCurrentRoot    = 0 -- Amount of blowback currently, for root
-SWEP.BlowbackCurrent        = 0 -- Amount of blowback currently, for bones
+SWEP.BlowbackCurrent        = 5 -- Amount of blowback currently, for bones
 SWEP.BlowbackBoneMods       = nil -- Viewmodel bone mods via SWEP Creation Kit
 SWEP.Blowback_Only_Iron     = true -- Only do blowback on ironsights
-SWEP.Blowback_PistolMode    = false -- Do we recover from blowback when empty?
+SWEP.Blowback_PistolMode    = true -- Do we recover from blowback when empty?
 SWEP.Blowback_Shell_Enabled = true -- Shoot shells through blowback animations
 SWEP.Blowback_Shell_Effect  = "ShellEject" -- Which shell effect to use
 SWEP.BlowbackAllowAnimation = nil -- Allow playing shoot animation with blowback?
@@ -601,7 +601,7 @@ SWEP.BlowbackAllowAnimation = nil -- Allow playing shoot animation with blowback
 -- When reloading weapon will be offset to holster position (TODO: Add separate property for that)
 -- AKA DoProceduralReload
 SWEP.IsProceduralReloadBased    = false
-SWEP.ProceduralReloadTime       = 1 -- Procedural reload time in seconds
+SWEP.ProceduralReloadTime       = 3 -- Procedural reload time in seconds
 
 -- Animation / sequence control
 SWEP.StatusLengthOverride       = {} -- Changes the status delay of a given animation; only used on reloads.  Otherwise, use SequenceLengthOverride or one of the others
@@ -609,7 +609,7 @@ SWEP.SequenceLengthOverride     = {} -- Changes both the status delay and the ne
 SWEP.SequenceTimeOverride       = {} -- Like above but changes animation length to a target
 SWEP.SequenceRateOverride       = {} -- Like above but scales animation length rather than being absolute
 
-SWEP.ProceduralHolsterEnabled   = nil -- Defaults to autodetection (if weapon has no ACT_VM_HOLSTER animation this is enabled if not specified)
+SWEP.ProceduralHolsterEnabled   = true -- Defaults to autodetection (if weapon has no ACT_VM_HOLSTER animation this is enabled if not specified)
 SWEP.ProceduralHolsterTime      = 0.3
 -- AKA ProceduralHolsterPos
 SWEP.ProceduralHolsterPosition  = Vector(3, 0, -5)
@@ -633,111 +633,58 @@ SWEP.Idle_Smooth                = 0.05 -- Start an idle this far early into the 
 -- Keep in mind that HYBRID sometimes produce very weird results, especially if
 -- model's animation is "out of sync" with Lua's one
 SWEP.Sights_Mode                = TFA.Enum.LOCOMOTION_LUA
---[[
-SWEP.IronAnimation = {
-	["in"] = {
-		["type"] = TFA.Enum.ANIMATION_SEQ, -- Sequence or act
-		["value"] = "Idle_To_Iron", -- Number for act, String/Number for sequence
-		["value_empty"] = "Idle_To_Iron_Dry",
-		["transition"] = true
-	}, -- Inward transition
-	["loop"] = {
-		["type"] = TFA.Enum.ANIMATION_SEQ, -- Sequence or act
-		["value"] = "Idle_Iron", -- Number for act, String/Number for sequence
-		["value_empty"] = "Idle_Iron_Dry"
-	}, -- Looping Animation
-	["out"] = {
-		["type"] = TFA.Enum.ANIMATION_SEQ, -- Sequence or act
-		["value"] = "Iron_To_Idle", -- Number for act, String/Number for sequence
-		["value_empty"] = "Iron_To_Idle_Dry",
-		["transition"] = true
-	}, -- Outward transition
-	["shoot"] = {
-		["type"] = TFA.Enum.ANIMATION_SEQ, -- Sequence or act
-		["value"] = "Fire_Iron", -- Number for act, String/Number for sequence
-		["value_last"] = "Fire_Iron_Last",
-		["value_empty"] = "Fire_Iron_Dry"
-	} -- What do you think
-}
-]]
+
+
 
 -- TFA.Enum.LOCOMOTION_ANI = Model's animation
 -- TFA.Enum.LOCOMOTION_LUA = Lua only
 -- TFA.Enum.LOCOMOTION_HYBRID = TFA.Enum.LOCOMOTION_ANI + TFA.Enum.LOCOMOTION_LUA
-SWEP.Sprint_Mode                = TFA.Enum.LOCOMOTION_LUA
---[[
+SWEP.Sprint_Mode                = TFA.Enum.LOCOMOTION_ANI
+
 SWEP.SprintAnimation = {
-	["in"] = {
-		["type"] = TFA.Enum.ANIMATION_SEQ, -- Sequence or act
-		["value"] = "Idle_to_Sprint", -- Number for act, String/Number for sequence
-		["value_empty"] = "Idle_to_Sprint_Empty",
-		["transition"] = true
-	}, -- Inward transition
 	["loop"] = {
-		["type"] = TFA.Enum.ANIMATION_SEQ, -- Sequence or act
-		["value"] = "Sprint_", -- Number for act, String/Number for sequence
-		["value_empty"] = "Sprint_Empty_",
-		["is_idle"] = true
-	}, -- looping animation
-	["out"] = {
-		["type"] = TFA.Enum.ANIMATION_SEQ, -- Sequence or act
-		["value"] = "Sprint_to_Idle", -- Number for act, String/Number for sequence
-		["value_empty"] = "Sprint_to_Idle_Empty",
-		["transition"] = true
-	} -- Outward transition
+		["type"] = TFA.Enum.ANIMATION_SEQ,
+		["value"] = "Sprint",
+		["is_idle"] = true,
+	},
+
 }
-]]
 
 -- TFA.Enum.LOCOMOTION_ANI = Model's animation
 -- TFA.Enum.LOCOMOTION_LUA = Lua only
 -- TFA.Enum.LOCOMOTION_HYBRID = TFA.Enum.LOCOMOTION_ANI + TFA.Enum.LOCOMOTION_LUA
-SWEP.Walk_Mode                  = TFA.Enum.LOCOMOTION_LUA
---[[
+SWEP.Walk_Mode                  = TFA.Enum.LOCOMOTION_ANI
 SWEP.WalkAnimation = {
-	["in"] = {
-		["type"] = TFA.Enum.ANIMATION_SEQ, -- Sequence or act
-		["value"] = "Idle_to_Walk", -- Number for act, String/Number for sequence
-		["value_empty"] = "Idle_to_Walk_Empty",
-		["transition"] = true
-	}, -- Inward transition
 	["loop"] = {
-		["type"] = TFA.Enum.ANIMATION_SEQ, -- Sequence or act
-		["value"] = "Walk", -- Number for act, String/Number for sequence
-		["value_empty"] = "Walk_Empty",
+		["type"] = TFA.Enum.ANIMATION_SEQ, 
+		["value"] = "Walk", 
 		["is_idle"] = true
-	}, -- looping animation
-	["out"] = {
-		["type"] = TFA.Enum.ANIMATION_SEQ, -- Sequence or act
-		["value"] = "Walk_to_Idle", -- Number for act, String/Number for sequence
-		["value_empty"] = "Walk_to_Idle_Empty",
-		["transition"] = true
-	} -- Outward transition
+	},
 }
-]]
-
---[[
+-- --[[
 -- Looping fire animation (full-auto only)
-SWEP.ShootAnimation = {
-	["in"] = {
-		["type"] = TFA.Enum.ANIMATION_SEQ, -- Sequence or act
-		["value"] = "ShootLoop_Start", -- Number for act, String/Number for sequence
-		["value_is"] = "ShootLoop_Iron_Start", -- Number for act, String/Number for sequence
-		["transition"] = true
-	}, -- Looping Start, fallbacks to loop
-	["loop"] = {
-		["type"] = TFA.Enum.ANIMATION_SEQ, -- Sequence or act
-		["value"] = "ShootLoop", -- Number for act, String/Number for sequence,
-		["value_is"] = "ShootLoop_Iron", -- Number for act, String/Number for sequence,
-		["is_idle"] = true,
-	}, -- Looping Animation
-	["out"] = {
-		["type"] = TFA.Enum.ANIMATION_SEQ, -- Sequence or act
-		["value"] = "ShootLoop_End", -- Number for act, String/Number for sequence
-		["value_is"] = "ShootLoop_Iron_End", -- Number for act, String/Number for sequence
-		["transition"] = true
-	}, -- Looping End
-}
-]]
+
+--SWEP.ShootAnimation = {
+-- 	["in"] = {
+-- 		["type"] = TFA.Enum.ANIMATION_SEQ, -- Sequence or act
+-- 		["value"] = "ShootLoop_Start", -- Number for act, String/Number for sequence
+-- 		["value_is"] = "ShootLoop_Iron_Start", -- Number for act, String/Number for sequence
+-- 		["transition"] = true
+-- 	}, -- Looping Start, fallbacks to loop
+-- 	["loop"] = {
+-- 		["type"] = TFA.Enum.ANIMATION_SEQ, -- Sequence or act
+-- 		["value"] = "ShootLoop", -- Number for act, String/Number for sequence,
+-- 		["value_is"] = "ShootLoop_Iron", -- Number for act, String/Number for sequence,
+-- 		["is_idle"] = true,
+-- 	}, -- Looping Animation
+-- 	["out"] = {
+-- 		["type"] = TFA.Enum.ANIMATION_SEQ, -- Sequence or act
+-- 		["value"] = "ShootLoop_End", -- Number for act, String/Number for sequence
+-- 		["value_is"] = "ShootLoop_Iron_End", -- Number for act, String/Number for sequence
+-- 		["transition"] = true
+-- 	}, -- Looping End
+-- }
+-- ]]
 
 -- TFA.Enum.LOCOMOTION_ANI = Model's animation
 -- TFA.Enum.LOCOMOTION_LUA = Lua only
@@ -775,8 +722,8 @@ SWEP.PumpAction = { -- Pump/bolt animations
 ----------------- Effects related
 
 -- Attachments
-SWEP.MuzzleAttachment           = "1" -- Should be "1" for CSS models or "muzzle" for hl2 models
-SWEP.ShellAttachment            = "2" -- Should be "2" for CSS models or "shell" for hl2 models
+SWEP.MuzzleAttachment           = "muzzle" -- Should be "1" for CSS models or "muzzle" for hl2 models
+SWEP.ShellAttachment            = "shell" -- Should be "2" for CSS models or "shell" for hl2 models
 SWEP.MuzzleFlashEnabled         = true -- Enable muzzle flash
 SWEP.MuzzleAttachmentRaw        = nil -- This will override whatever string you gave. This is the raw attachment NUMBER. This is overridden or created when a gun makes a muzzle event.
 SWEP.AutoDetectMuzzleAttachment = false -- For multi-barrel weapons, detect the proper attachment?
@@ -913,7 +860,7 @@ SWEP.StencilSight_UseMask = nil -- Use the .mask value of VElement's table as st
 
 -- [[ BASH BASE PARAMETERS ]] --
 -- If you're using "tfa_bash_base" or something that's derived from it
-SWEP.Secondary.CanBash            = true -- set to false to disable bashing
+SWEP.Secondary.CanBash            = false -- set to false to disable bashing
 SWEP.Secondary.BashDamage         = 25 -- Melee bash damage
 SWEP.Secondary.BashSound          = "TFA.Bash" -- Soundscript name for bash swing sound
 SWEP.Secondary.BashHitSound       = "TFA.BashWall" -- Soundscript name for non-flesh hit sound
