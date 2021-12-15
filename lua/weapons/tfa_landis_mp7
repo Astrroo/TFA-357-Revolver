@@ -496,7 +496,7 @@ SWEP.WorldModelBodygroups       = nil -- {
 -- [2] = etc.
 -- }
 
-SWEP.HoldType = "" -- This is how others view you carrying the weapon. Options include:
+SWEP.HoldType = "smg" -- This is how others view you carrying the weapon. Options include:
 -- normal melee melee2 fist knife smg ar2 pistol rpg physgun grenade shotgun crossbow slam passive
 -- You're mostly going to use ar2, smg, shotgun or pistol. rpg and crossbow make for good sniper rifles
 
