@@ -153,7 +153,7 @@ SWEP.Silenced                     = false -- Silenced by default?
 
 ----------------- Selective Fire Stuff
 SWEP.SelectiveFire                = true -- Allow selecting your firemode?
-SWEP.DisableBurstFire             = false -- Only auto/single?
+SWEP.DisableBurstFire             = true -- Only auto/single?
 SWEP.OnlyBurstFire                = false -- No auto, only burst/single?
 SWEP.BurstFireCount               = nil -- Burst fire count override (autocalculated by the clip size if nil)
 SWEP.DefaultFireMode              = "" -- Default to auto or whatev
@@ -383,7 +383,7 @@ SWEP.RegularMoveSpeedMultiplier         = nil -- Defaults to 1
 SWEP.AimingDownSightsSpeedMultiplier    = nil -- Defaults to 0.8
 
 ----------------- ViewModel related
-SWEP.ViewModel          = "models/your/path/here.mdl" -- Viewmodel path
+SWEP.ViewModel          = "models/weapons/smg1/c_smg1.mdl" -- Viewmodel path
 SWEP.ViewModelFOV       = 65        -- This controls how big the viewmodel looks.  Less is more.
 SWEP.ViewModelFlip      = false     -- Set this to true for CSS models, or false for everything else (with a righthanded viewmodel.)
 SWEP.UseHands           = false -- Use gmod c_arms system.
